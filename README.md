@@ -7,7 +7,7 @@ however more realistic to also model the coverage as a random variable too (pois
 ignoring the binomial sampling of cells from tissue - but large n of cells should
 make this variance small and ignorable
 
-[](power_analysis.R)
+[code is here](/power_analysis.R)
 ## Mutational signature identification and quantification
 
 Followed method as outlined in S1 text from SparseSignatures paper, "De novo mutational signature discovery in tumor genomes using SparseSignatures", by Avantika Lal,Keli Liu,Robert Tibshirani,Arend Sidow,Daniele Ramazzotti 
