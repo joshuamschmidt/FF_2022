@@ -13,12 +13,16 @@ Justifies 500X versus 100X: with variant allele frequency of 1%, 87% power to fi
 
 ## Mutational signature identification and quantification
 
-Followed method as outlined in S1 text from SparseSignatures paper, "De novo mutational signature discovery in tumor genomes using SparseSignatures", by Avantika Lal,Keli Liu,Robert Tibshirani,Arend Sidow,Daniele Ramazzotti 
+Followed method as outlined in S1 text from SparseSignatures paper, "De novo mutational signature discovery in tumor genomes using SparseSignatures", by Avantika Lal,Keli Liu,Robert Tibshirani,Arend Sidow,Daniele Ramazzotti.
+ 
 [paper is here](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009119#abstract0)
 
 simulated 6 high + low UV exposed eye quadrants using COSMIC 7a and 7b signatures on Lal defined clock like muational backgrounds.
 
 SparseSignatures correctly identified signatures, 'S3' with highest correlation with COSMIC 7a/7b.
 Correctly identified samples from higher UV region.
+ See results below (confusingly 'S3' is labelled Siganture 2 in the plot - must be a minor bug in the R package):
+
+![identified_signatures](/mut_signature.png)
 
 [code is here](/mutation_signature_simulation.R)
