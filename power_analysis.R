@@ -1,5 +1,23 @@
-# simulate multinomial draws, becuase I dont know yet how to do it with density functions.....
-
+# power to detect VAFs
+# normally a simple binomial given pr success (VAF) and n draws (coverage), 
+# however more realistic to also model the coverage as a random variable too (poisson)
+# ignoring the binomial sampling of cells from tissue - but large n of cells should
+# make this variance small and ignorable
+set.seed(97)
+n_sites <- 5000
+coverage <- 500
+min_supporting_reads <- 3
+vafs <- c(1,5,10)
+power <- vector()
+for (v in vafs){
+  realised_coverage_per_site <- rpois(n_sites, coverage)
+  coverage_per_site <- sapply(realised_coverage_per_site, function(x) rbinom(1,size = x,prob = v/100))
+  power <- c(power,length(which(coverage_per_site >= min_supporting_reads))/n_sites*100)
+}
+names(power) <- paste0(vafs,"%")
+#> power
+#1%     5%    10% 
+#87.42 100.00 100.00 
 
 # 4 genes, each with 25% expected frequency. 25 patients
 n_genes <- 4
